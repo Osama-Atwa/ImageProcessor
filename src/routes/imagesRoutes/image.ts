@@ -25,7 +25,7 @@ images.get("/", Check, async (req, res) => {
 
   if (Cache.has(key)) {
     //check if the passed request is previously processed
-    return res.status(200).send(Cache.get(key));
+    return res.status(200).sendFile(Cache.get(key) as string);
   } else {
     //if not processed before then do all the logic and store the path into my cache
     const path: string = await imageResize(filename as string, width, height);

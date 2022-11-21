@@ -1,6 +1,5 @@
 import sharp from "sharp";
 import { dirname } from "path";
-
 const appDir = dirname(require.main!.path);
 
 const imageResize = async (filename: string, width: number, height: number) => {
@@ -9,7 +8,6 @@ const imageResize = async (filename: string, width: number, height: number) => {
     .resize(width, height)
     .toFile(`${appDir}/thumb/${filename}_thumb.jpg`);
   const path = `${appDir}/thumb/${filename}_thumb.jpg`;
-
   return path;
 };
 
