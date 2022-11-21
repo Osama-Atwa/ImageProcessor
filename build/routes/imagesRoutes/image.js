@@ -61,7 +61,7 @@ images.get("/", imageCheck_1.default, function (req, res) { return __awaiter(voi
                     height;
                 if (!Cache.has(key)) return [3 /*break*/, 1];
                 //check if the passed request is previously processed
-                return [2 /*return*/, res.status(200).send(Cache.get(key))];
+                return [2 /*return*/, res.status(200).sendFile(Cache.get(key))];
             case 1: return [4 /*yield*/, (0, imageReszie_1.default)(filename, width, height)];
             case 2:
                 path = _a.sent();

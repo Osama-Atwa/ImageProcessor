@@ -39,22 +39,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var imageReszie_1 = __importDefault(require("../routes/utilities/imageReszie"));
 var supertest_1 = __importDefault(require("supertest"));
 var index_1 = __importDefault(require("../index"));
 describe("Testing Images processing API", function () {
-    it("It should return the path for the new resized image", function () { return __awaiter(void 0, void 0, void 0, function () {
-        var path;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, (0, imageReszie_1.default)("fjord", 400, 200)];
-                case 1:
-                    path = _a.sent();
-                    expect(path).toBe("F:/Udacity/ImageProcessor/thumb/fjord_thumb.jpg");
-                    return [2 /*return*/];
-            }
-        });
-    }); });
+    // it("It should return the path for the new resized image", async () => {
+    //   const path = await imageResize("fjord", 400, 200);
+    //   expect(path).toBe(`F:/Udacity/ImageProcessor/thumb/fjord_thumb.jpg`);
+    // });
     it("It should return instructions for the right URL format", function () { return __awaiter(void 0, void 0, void 0, function () {
         var Response;
         return __generator(this, function (_a) {
