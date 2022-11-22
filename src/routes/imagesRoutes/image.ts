@@ -10,6 +10,17 @@ const images = express.Router();
 // here i am using cache for performance interests
 const Cache = new NodeCache();
 
+/*
+input type is {
+  filename:string,
+  width:string,
+  height:string
+}
+
+output type is file
+
+i used sendFile which takes the path for the desired file to be sent
+ */
 images.get("/", Check, async (req, res) => {
   const filename = req.query.filename!;
   const width = +req.query.width!;

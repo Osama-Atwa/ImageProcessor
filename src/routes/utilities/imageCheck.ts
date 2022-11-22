@@ -1,5 +1,7 @@
 import express from "express";
 import fs from "fs";
+import { dirname } from "path";
+const appDir = dirname(require.main!.path);
 
 const Check = (
   req: express.Request,
@@ -17,7 +19,8 @@ const Check = (
     }
 
     //now the time to check if the passed filename is existed
-    fs.exists(`F:/Udacity/ImageProcessor/full/${filename}.jpg`, (exists) => {
+
+    fs.exists(`${appDir}/full/${filename}.jpg`, (exists) => {
       if (!exists) {
         res
           .status(404)

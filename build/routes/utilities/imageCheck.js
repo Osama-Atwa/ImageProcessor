@@ -4,6 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs_1 = __importDefault(require("fs"));
+var path_1 = require("path");
+var appDir = (0, path_1.dirname)(require.main.path);
 var Check = function (req, res, next) {
     try {
         var filename = req.query.filename;
@@ -14,7 +16,7 @@ var Check = function (req, res, next) {
             throw new Error("bad request");
         }
         //now the time to check if the passed filename is existed
-        fs_1.default.exists("F:/Udacity/ImageProcessor/full/".concat(filename, ".jpg"), function (exists) {
+        fs_1.default.exists("".concat(appDir, "/full/").concat(filename, ".jpg"), function (exists) {
             if (!exists) {
                 res
                     .status(404)
